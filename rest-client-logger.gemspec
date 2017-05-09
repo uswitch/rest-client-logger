@@ -12,7 +12,6 @@ Gem::Specification.new do |s|
   s.homepage    = "http://github.com/uswitch/rest-client-logger"
   s.description   = %q{Adds logging of the RestClient requests to the Rails debug log}
   s.summary       = %q{Adds logging of the RestClient requests to the Rails debug log}
-  s.version     = '0.0.1'
   s.files = Dir["{lib}/**/*", "MIT-LICENSE", "README.md"]
 
   s.add_dependency 'railties', '>= 3.1'
