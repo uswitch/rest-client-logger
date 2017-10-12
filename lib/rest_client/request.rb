@@ -1,12 +1,11 @@
 module RestClient
-  class Request
-
-    def execute_with_instrumentation(& block)
+  module RequestWithInstrumentation
+    def execute(& block)
       ActiveSupport::Notifications.instrument('log.restclient', url: url, method: method, headers: headers) do
-        execute_without_instrumentation &block
+        super &block
       end
     end
-
-    alias_method_chain :execute, :instrumentation
   end
+
+  RestClient::Request.prepend RequestWithInstrumentation
 end
